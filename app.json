@@ -1,0 +1,6 @@
+{
+  "name": "Get Me High",
+  "description": "The quickest way to find a coffeeshop near your location",
+  "repository": "https://github.com/RamonGebben/getmehigh-fb-bot",
+  "image": "heroku/nodejs"
+}
