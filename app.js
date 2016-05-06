@@ -8,27 +8,27 @@ server.connection({ port: process.env.PORT || 3000 });
 server.route({
   method: 'GET',
   path: '/',
-  handler: function (request, reply) {
-    reply('Ja hoor hij werkt!');
+  handler: (request, reply) => {
+    return reply('Ja hoor hij werkt!');
   }
 });
 
 server.route({
   method: 'GET',
   path: '/{name}',
-  handler: function (request, reply) {
-    reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+  handler: (request, reply) => {
+    return reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
   }
 });
 
 server.route({
   method: 'GET',
   path: '/webhook',
-  handler: function (request, reply) {
+  handler: (request, reply) => {
     if (request.query['hub.verify_token'] === 'jemoederisdik') {
-      reply(request.query['hub.challenge']);
+      return reply(request.query['hub.challenge']);
     }
-    reply('Error, wrong validation token');
+    return reply('Error, wrong validation token');
   }
 });
 
